@@ -553,6 +553,7 @@ module.exports = {
   mockBatchDelete,
   mockBatchCommit,
   mockBatchUpdate,
+  mockBatchCreate,
   mockBatchSet,
   mockOnSnapShot,
   mockListDocuments,

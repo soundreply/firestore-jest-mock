@@ -43,7 +43,7 @@ export class FakeFirestore {
   options: Record<string, never>;
   query: Query;
   collectionName: string;
-  
+
   constructor(stubbedDatabase?: DatabaseCollections, options?: Record<string, never>);
 
   getAll(): Array<MockedQuerySnapshot>;
@@ -61,7 +61,7 @@ declare class DocumentReference {
   parent: CollectionReference;
   firestore: FakeFirestore;
   path: string;
-  
+
   constructor(id: string, parent: CollectionReference);
 
   collection(collectionName: string): CollectionReference;
@@ -98,7 +98,7 @@ declare class CollectionReference extends FakeFirestore.Query {
   id: string;
   parent: DocumentReference;
   path: string;
-  
+
   constructor(id: string, parent: DocumentReference, firestore?: FakeFirestore);
 
   doc(id?: string): DocumentReference;
