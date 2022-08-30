@@ -17,6 +17,7 @@ const mockBatchDelete = jest.fn();
 const mockBatchCommit = jest.fn();
 const mockBatchUpdate = jest.fn();
 const mockBatchSet = jest.fn();
+const mockBatchCreate = jest.fn();
 
 const mockOnSnapShot = jest.fn();
 
@@ -70,6 +71,12 @@ class FakeFirestore {
       update(doc, data) {
         mockBatchUpdate(...arguments);
         this._ref._updateData(doc.path, data, true);
+        return this;
+      },
+      create(doc, data) {
+        // so far we only record the create and don't mutate the data
+        mockBatchCreate(...arguments);
+        // this._ref._updateData(doc.path, data, true);
         return this;
       },
       commit() {
